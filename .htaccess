@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteRule ^paytmresponse/(.*) paytmresponse.php?t=$1
+RewriteRule ^p/(.*)/(.*) product_detail.php?id=$2&cid=$1
+RewriteRule ^c/(.*)/(.*) pro_category.php?id=$1&sub_categories=$2
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^(.*)$ $1.php [NC,L]
